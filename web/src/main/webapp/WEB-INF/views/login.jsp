@@ -7,24 +7,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LETSSTUDY главная</title>
+
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.0.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
-    <!-- Подключение JavaScript-файла offcanvas -->
-    <%--<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.offcanvas.min.js"></script>--%>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.0.js"></script>
-    <%--<!-- Подключение CSS-файла offcanvas -->--%>
-    <%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.offcanvas.min.css">--%>
-    <%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/teachersCabinet.css">--%>
-    <%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/search.css">--%>
+
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/index.css">
+
+
+
+
+
+    <%--<meta charset="utf-8">--%>
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
+    <%--<title>LETSSTUDY главная</title>--%>
+    <%--<!-- Latest compiled and minified CSS -->--%>
+    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"--%>
+          <%--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">--%>
+    <%--<!-- Optional theme -->--%>
+    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"--%>
+          <%--integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">--%>
+    <%--<!-- Latest compiled and minified JavaScript -->--%>
+    <%--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"--%>
+            <%--integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"--%>
+            <%--crossorigin="anonymous"></script>--%>
+    <%--<!-- Подключение JavaScript-файла offcanvas -->--%>
+    <%--&lt;%&ndash;<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.offcanvas.min.js"></script>&ndash;%&gt;--%>
+    <%--<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.0.js"></script>--%>
+    <%--&lt;%&ndash;<!-- Подключение CSS-файла offcanvas -->&ndash;%&gt;--%>
+    <%--&lt;%&ndash;<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.offcanvas.min.css">&ndash;%&gt;--%>
+    <%--&lt;%&ndash;<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/teachersCabinet.css">&ndash;%&gt;--%>
+    <%--&lt;%&ndash;<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/search.css">&ndash;%&gt;--%>
+    <%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/index.css">--%>
 </head>
 <body>
 <%@ include file="include/header.jsp" %>
@@ -311,11 +336,10 @@
         </div>
     </div>
 </section>
-<%--<script type="text/javascript" src="/resources/js/teachersCabinet.js"></script>--%>
-<script type="text/javascript" src="/resources/js/index.js"></script>
-<script type="text/javascript" src="/resources/js/emailVerification.js"></script>
 
 <%@ include file="include/footer.jsp" %>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/index.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/emailVerification.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/teachersCabinet.js"></script>
 </body>
 </html>
