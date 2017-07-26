@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <mapping class="edu.letsstudy.project.pojo.Chat"/>
+        <mapping class="edu.letsstudy.project.pojo.Teacher"/>
+        <mapping class="edu.letsstudy.project.pojo.User"/>
+        <mapping class="edu.letsstudy.project.pojo.Competence"/>
+        <mapping class="edu.letsstudy.project.pojo.Exam"/>
+        <mapping class="edu.letsstudy.project.pojo.Language"/>
+        <mapping class="edu.letsstudy.project.pojo.Role"/>
+        <mapping class="edu.letsstudy.project.pojo.Student"/>
+    </session-factory>
+</hibernate-configuration>
