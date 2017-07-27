@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -62,7 +63,7 @@ public class TeacherController {
     @RequestMapping(value = "/find/teacher", method = RequestMethod.GET)
     public String teacherFilter(Model model) {
         model.addAttribute("teacherForm", new Teacher());
-        return "teacher-find-filter";
+        return "search";
     }
 
 //    @RequestMapping(value = "/show", method = RequestMethod.GET, produces = { "text/html; charset=UTF-8" })
@@ -73,7 +74,7 @@ public class TeacherController {
 //    }
 
     @RequestMapping(value = "/teacher-filter", method = RequestMethod.POST)
-    public String teacherFilter(@RequestParam("country") String country,
+    public ModelAndView teacherFilter(@RequestParam("country") String country,
                                       @RequestParam("city") String city,
                                       @RequestParam("skype") String skype,
                                       @RequestParam("teachingLanguage") String teachingLanguage,
@@ -81,15 +82,14 @@ public class TeacherController {
                                       @RequestParam("interlanguage") String interlanguage,
                                       @RequestParam("exam") String exam,
                                       @RequestParam("competence") String competence,
-                                Model model) {
-//
+                                      Model model) {
+
 //        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 //        Locale locale = new Locale("ru_RU");
 //        dtf = dtf.withLocale(locale);
 //        LocalDate dateOfBirth = LocalDate.parse(date, dtf);
         List<Teacher> res = teacherService.teacherFilter(country, city, teachingLanguage, motherTongue, interlanguage, exam, competence);
-        model.addAttribute("res" , res);
-        return "/teacher-find-filter";
+        return new ModelAndView("search", "res" , res);
     }
 
 

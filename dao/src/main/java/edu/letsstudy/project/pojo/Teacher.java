@@ -36,7 +36,7 @@ public class Teacher {
     private String surname;
 
     @Column(name = "TEACHER_DATE_OF_BIRTH")
-    private LocalDate dateOfBirth;
+    private Date dateOfBirth;
 
     @Column(name = "TEACHER_COUNTRY")
     private String country;
@@ -61,6 +61,9 @@ public class Teacher {
 
     @Column(name = "TEACHER_LOCALE")
     private String locale;
+
+    @Column(name = "DESCRIPTION")
+    private String description;
 
     @ManyToMany
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
@@ -114,6 +117,7 @@ public class Teacher {
                 ", priceForComplexLesson=" + priceForComplexLesson +
                 ", teacherPhoto='" + teacherPhoto + '\'' +
                 ", locale='" + locale + '\'' +
+                ", description='" + description + '\'' +
                 ", chats=" + chats +
                 ", teachingLanguages=" + teachingLanguages +
                 ", motherTongues=" + motherTongues +
@@ -145,6 +149,7 @@ public class Teacher {
         if (teacherPhoto != null ? !teacherPhoto.equals(teacher.teacherPhoto) : teacher.teacherPhoto != null)
             return false;
         if (locale != null ? !locale.equals(teacher.locale) : teacher.locale != null) return false;
+        if (description != null ? !description.equals(teacher.description) : teacher.description != null) return false;
         if (chats != null ? !chats.equals(teacher.chats) : teacher.chats != null) return false;
         if (teachingLanguages != null ? !teachingLanguages.equals(teacher.teachingLanguages) : teacher.teachingLanguages != null)
             return false;
@@ -172,6 +177,7 @@ public class Teacher {
         result = 31 * result + (priceForComplexLesson != null ? priceForComplexLesson.hashCode() : 0);
         result = 31 * result + (teacherPhoto != null ? teacherPhoto.hashCode() : 0);
         result = 31 * result + (locale != null ? locale.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (chats != null ? chats.hashCode() : 0);
         result = 31 * result + (teachingLanguages != null ? teachingLanguages.hashCode() : 0);
         result = 31 * result + (motherTongues != null ? motherTongues.hashCode() : 0);
@@ -205,11 +211,11 @@ public class Teacher {
         this.surname = surname;
     }
 
-    public LocalDate getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -275,6 +281,14 @@ public class Teacher {
 
     public void setLocale(String locale) {
         this.locale = locale;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Set<Chat> getChats() {

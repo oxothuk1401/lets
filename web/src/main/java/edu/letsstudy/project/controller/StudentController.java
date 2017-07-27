@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -33,19 +34,19 @@ public class StudentController {
     @RequestMapping(value = "/register/student", method = RequestMethod.GET)
     public String teacherRegistration(Model model) {
         model.addAttribute("modelForm", new Teacher());
-        return "student-registration";
+        return "form_registration_student";
     }
 
     @RequestMapping(value = "/register/student", method = RequestMethod.POST)
-    public String teacherRegistration(@RequestParam("name") String name,
-                                      @RequestParam("surname") String surname,
+    public ModelAndView teacherRegistration(@RequestParam("name") String name,
+                                            @RequestParam("surname") String surname,
 //                                      @RequestParam("dateOfBirth") String date,
-                                      @RequestParam("country") String country,
-                                      @RequestParam("city") String city,
-                                      @RequestParam("skype") String skype,
-                                      @RequestParam("phoneNumber") String phone,
-                                      @RequestParam("motherTongue") String motherTongue,
-                                      @RequestParam("teachingLanguage") String teachingLanguage) {
+                                            @RequestParam("country") String country,
+                                            @RequestParam("city") String city,
+                                            @RequestParam("skype") String skype,
+                                            @RequestParam("phoneNumber") String phone,
+                                            @RequestParam("motherTongue") String motherTongue,
+                                            @RequestParam("teachingLanguage") String teachingLanguage) {
 
 //
 //        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -62,6 +63,6 @@ public class StudentController {
         student.setPhoneNumber(phone);
 
         studentService.registerStudent(student, motherTongue, teachingLanguage);
-        return "welcome";
+        return new ModelAndView("student_page", "student", student);
     }
 }

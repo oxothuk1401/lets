@@ -100,8 +100,8 @@ public class TeacherServiceImpl implements TeacherService{
         if (competenceTitle.length() > 0) {
             from.join(teacher.specialCompetence, competence).where(competence.competenceTitle.contains(competenceTitle));
         }
-        return query.fetch();
-//        return query.fetchResults().getResults();
+//        return query.fetch();
+        return query.fetchResults().getResults();
     }
 
 }
