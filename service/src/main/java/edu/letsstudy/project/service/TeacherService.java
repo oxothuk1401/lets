@@ -12,6 +12,6 @@ public interface TeacherService {
     void registerTeacher(Teacher teacher, String teachingLanguage, String motherTongue,
                          String interLanguage, String exam, String competenceTitle);
 
-    List<Teacher> teacherFilter(String country, String city, String teachingLanguage,
-                                String motherTongue, String interLanguage, String exam, String competenceTitle);
+    List<Teacher> teacherFilter(String country, String teachingLanguage, String motherTongue,
+                                String priceForLesson, String  exam, String competence);
 }

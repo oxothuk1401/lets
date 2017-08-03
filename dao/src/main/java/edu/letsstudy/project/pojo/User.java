@@ -1,8 +1,11 @@
 package edu.letsstudy.project.pojo;
 
 import lombok.*;
+import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,12 +26,17 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
+//    @NotNull(message = "notnull")
+//    @Size(min = 6, message = "user.size")
     @Column(name = "user_username", nullable = false)
     private String username;
-
+//    @Email(message = "user.email")
+//    @NotNull(message = "notnull")
     @Column(name = "user_email", nullable = false, unique = true)
     private String email;
 
+//    @NotNull(message = "notnull")
+//    @Size(min = 6, message = "user.pass")
     @Column(name = "user_password", nullable = false)
     private String password;
 

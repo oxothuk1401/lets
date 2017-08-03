@@ -3,6 +3,7 @@ package edu.letsstudy.project.controller;
 import edu.letsstudy.project.pojo.Role;
 import edu.letsstudy.project.pojo.Student;
 import edu.letsstudy.project.pojo.Teacher;
+import edu.letsstudy.project.pojo.User;
 import edu.letsstudy.project.service.RoleService;
 import edu.letsstudy.project.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,15 +30,18 @@ public class StudentController {
     @Autowired
     private RoleService roleService;
 
+    @RequestMapping(value = "/funcMyTeachersAction", method = RequestMethod.GET)
+    public String funcMyTeachersAction() {
+        return "funcMyTeachers";
+    }
 
 
-    @RequestMapping(value = "/register/student", method = RequestMethod.GET)
-    public String teacherRegistration(Model model) {
-        model.addAttribute("modelForm", new Teacher());
+    @RequestMapping(value = "/regStudentAction", method = RequestMethod.GET)
+    public String regTeacher() {
         return "form_registration_student";
     }
 
-    @RequestMapping(value = "/register/student", method = RequestMethod.POST)
+    @RequestMapping(value = "/regStudentActionForm", method = RequestMethod.POST)
     public ModelAndView teacherRegistration(@RequestParam("name") String name,
                                             @RequestParam("surname") String surname,
 //                                      @RequestParam("dateOfBirth") String date,
@@ -63,6 +67,6 @@ public class StudentController {
         student.setPhoneNumber(phone);
 
         studentService.registerStudent(student, motherTongue, teachingLanguage);
-        return new ModelAndView("student_page", "student", student);
+        return new ModelAndView("search", "student", student);
     }
 }

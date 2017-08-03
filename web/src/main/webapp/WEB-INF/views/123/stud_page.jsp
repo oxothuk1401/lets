@@ -7,8 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LETSSTUDY кабинет учителя</title>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.0.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.offcanvas.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.2.0.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.offcanvas.min.js"></script>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -24,9 +24,9 @@
             crossorigin="anonymous"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.offcanvas.min.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/teachersCabinet.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/search.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.offcanvas.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/teachersCabinet.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/search.css">
 
 </head>
 <body>
@@ -55,15 +55,15 @@
                         <form id="logoutForm" method="POST" action="/logout">
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         </form>
-                        <li><a href="#"><img src="/resources/images/icons/myCollegs.png"> <span
+                        <li><a href="#"><img src="/images/icons/myCollegs.png"> <span
                                 class="colorWhite fontSize24px" id="myCollegs">Поиск преподователя</span></a></li>
-                        <li><a href="#"><img src="/resources/images/icons/calendar4.png" id="myCalendar"></a></li>
-                        <li><a href="/show_my_chats"><img src="/resources/images/icons/message1.png" id="myMessage"></a>
+                        <li><a href="#"><img src="/images/icons/calendar4.png" id="myCalendar"></a></li>
+                        <li><a href="/show_my_chats"><img src="/images/icons/message1.png" id="myMessage"></a>
                         </li>
-                        <li><a href="#"><img src="/resources/images/icons/notice1.png" id="myNotice"></a></li>
+                        <li><a href="#"><img src="/images/icons/notice1.png" id="myNotice"></a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
-                                    src="/resources/images/icons/accaunt1.png"></a>
+                                    src="/images/icons/accaunt1.png"></a>
                             <ul class="dropdown-menu bgColorGrey" role="menu">
                                 <li><a href="#"><span class="colorWhite fontSize24px">Личные данные</span></a></li>
                                 <li><a href="#"><span class="colorWhite fontSize24px">Резюме</span></a></li>
@@ -74,9 +74,9 @@
                             </ul>
                         </li>
                     </c:if>
-                    <a href="?lang=en"><img src="/resources/images/icons/en.jpg" alt="en"
+                    <a href="?lang=en"><img src="/images/icons/en.jpg" alt="en"
                                             style="margin-right: -15px;"></a>
-                    <a href="?lang=ru"><img src="/resources/images/icons/rus.jpg" alt="rus"
+                    <a href="?lang=ru"><img src="/images/icons/rus.jpg" alt="rus"
                                             style="margin-right: -15px;"></a>
                 </ul>
             </div>
@@ -98,7 +98,7 @@
             <!-- 1 notice -->
             <div class="col-xs-12 col-md-12 paddingTop15px">
                 <div class="col-xs-2 col-md-1 text-center">
-                    <img src="/resources/images/icons/label.png">
+                    <img src="/images/icons/label.png">
                 </div>
                 <div class="col-xs-10 col-md-11">
                     <div class="row">
@@ -116,7 +116,7 @@
             <!-- 2 notice -->
             <div class="col-xs-12 col-md-12 paddingTop15px">
                 <div class="col-xs-2 col-md-1 text-center">
-                    <img src="/resources/images/icons/label.png">
+                    <img src="/images/icons/label.png">
                 </div>
                 <div class="col-xs-10 col-md-11">
                     <div class="row">
@@ -143,7 +143,7 @@
             <!-- 3 notice -->
             <div class="col-xs-12 col-md-12 paddingTop15px">
                 <div class="col-xs-2 col-md-1 text-center">
-                    <img src="/resources/images/icons/label.png">
+                    <img src="/images/icons/label.png">
                 </div>
                 <div class="col-xs-10 col-md-11">
                     <div class="row">
@@ -161,7 +161,7 @@
             <!-- 4 notice -->
             <div class="col-xs-12 col-md-12 paddingTop15px">
                 <div class="col-xs-2 col-md-1 text-center">
-                    <img src="/resources/images/icons/label.png">
+                    <img src="/images/icons/label.png">
                 </div>
                 <div class="col-xs-10 col-md-11">
                     <div class="row">
@@ -220,7 +220,7 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-2 paddingLeft0">
-                                    <img src="/resources/images/icons/userPhoto.png">
+                                    <img src="/images/icons/userPhoto.png">
                                 </div>
                                 <div class="col-md-10">
                                     <div class="row">
@@ -245,7 +245,7 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-2 paddingLeft0">
-                                    <img src="/resources/images/icons/userPhoto.png">
+                                    <img src="/images/icons/userPhoto.png">
                                 </div>
                                 <div class="col-md-10">
                                     <div class="row">
@@ -270,7 +270,7 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-2 paddingLeft0">
-                                    <img src="/resources/images/icons/userPhoto.png">
+                                    <img src="/images/icons/userPhoto.png">
                                 </div>
                                 <div class="col-md-10">
                                     <div class="row">
@@ -328,7 +328,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="col-md-1 paddingLeft0"><img
-                                                src="/resources/images/icons/userPhoto.png"></div>
+                                                src="/images/icons/userPhoto.png"></div>
                                         <div class="col-md-11">
                                             <div class="col-md-12 styleForDateInMessage">13:07</div>
                                             <div class="col-md-12">
@@ -342,7 +342,7 @@
                                     </div>
                                     <div class="col-md-12 styleForNewMessage">
                                         <div class="col-md-1 paddingLeft0"><img
-                                                src="/resources/images/icons/userPhoto.png"></div>
+                                                src="/images/icons/userPhoto.png"></div>
                                         <div class="col-md-11">
                                             <div class="col-md-12 styleForDateInMessage">13:07</div>
                                             <div class="col-md-12">
@@ -384,7 +384,7 @@
                                 <input type="text" class="input-medium search-query searchPanel"
                                        placeholder="поиск преподователя" style="width: 85%;">
                                 <button type="submit" class="btn buttonForSearchPanel"><img
-                                        src="/resources/images/icons/search2.png"></button>
+                                        src="/images/icons/search2.png"></button>
                             </div>
                         </div>
                     </form>
@@ -593,7 +593,7 @@
                     </div>
 
                     <div style="text-align: center;">
-                        <img src="/resources/images/buttons/btnShow.png" class="btn" id="btnShow">
+                        <img src="/images/buttons/btnShow.png" class="btn" id="btnShow">
                     </div>
                 </div>
             </aside>
@@ -722,7 +722,7 @@
                 <%--<!-- 2 card of teacher -->--%>
 
             <%--</section>--%>
-            <%@ include file="include/search_result.jsp" %>
+            <%@ include file="../include/search_result.jsp" %>
         </div>
     </div>
 </div>
@@ -733,12 +733,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 myCalendarContentStyle paddingTop15px">
-                <div class="col-md-2 text-left"><img src="/resources/images/icons/calendarLeftArrowButton.png"
+                <div class="col-md-2 text-left"><img src="/images/icons/calendarLeftArrowButton.png"
                                                      class="btn padding0" id="calendarLeftArrowButton"
                                                      onclick="previousWeek()"></div>
                 <div class="col-md-8 text-center fontSize24px"><span id="dateForCalendar"></span> - <span
                         id="dateForCalendar2"></span></div>
-                <div class="col-md-2 text-right"><img src="/resources/images/icons/calendarRightArrowButton.png"
+                <div class="col-md-2 text-right"><img src="/images/icons/calendarRightArrowButton.png"
                                                       class="btn padding0" id="calendarRightArrowButton"
                                                       onclick="nextWeek()"></div>
             </div>
@@ -1040,12 +1040,12 @@
                 <p class="h3">Редактирование личного расписания</p>
             </div>
             <div class="col-md-8 col-md-offset-2 myCalendarContentStyle paddingTop15px">
-                <div class="col-md-2 text-left"><img src="/resources/images/icons/calendarLeftArrowButton.png"
+                <div class="col-md-2 text-left"><img src="/images/icons/calendarLeftArrowButton.png"
                                                      class="btn padding0" id="calendarLeftArrowButton"
                                                      onclick="previousWeekEdit()"></div>
                 <div class="col-md-8 text-center fontSize24px"><span id="dateForCalendar"></span> - <span
                         id="dateForCalendar2"></span></div>
-                <div class="col-md-2 text-right"><img src="/resources/images/icons/calendarRightArrowButton.png"
+                <div class="col-md-2 text-right"><img src="/images/icons/calendarRightArrowButton.png"
                                                       class="btn padding0" id="calendarRightArrowButton"
                                                       onclick="nextWeekEdit()"></div>
             </div>
@@ -1555,7 +1555,7 @@
 </div>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/content.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/time.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/time.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/menu.js"></script>
 </body>
 </html>

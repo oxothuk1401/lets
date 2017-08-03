@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <head>
-    <title><local:message code="form.reg.student"/></title>
+    <title><local:message code="form.reg.teacher"/></title>
     <script type="text/javascript" src="/resources/js/jquery-3.2.0.js"></script>
 
     <!-- Latest compiled and minified CSS -->
@@ -20,16 +20,15 @@
 
     <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/teachersCabinet.css">
-
 </head>
+
 <body>
 <%@ include file="include/header_autorized.jsp" %>
 <div class="container-fluid col-md-3">
-    <form action="/regStudentActionForm" method="post">
+    <form method="POST" action="/regTeacherActionForm">
 
         <input type="text" name="name" class="form-control" placeholder="name" required>
         <input type="text" name="surname" class="form-control" placeholder="surname" required>
-        <input type="text" name="dateOfBirth" class="form-control" placeholder="Date of birth" required>
         <input type="text" name="country" class="form-control" placeholder="country" required>
         <input type="text" name="city" class="form-control" placeholder="city" required>
         <input type="text" name="skype" class="form-control" placeholder="skype" required>
@@ -129,9 +128,66 @@
             <option value="Чешский">Чешский</option>
             <option value="Шведский">Шведский</option>
         </select>
+        <select name="interlanguage" class="form-control" style="border: 1px solid #DBDBDB;">
+            <option value="" selected>interlanguage</option>
+            <option value="Английский">Английский</option>
+            <option value="Русский">Русский</option>
+            <option value="Азербайджанский">Азербайджанский</option>
+            <option value="Албанский">Албанский</option>
+            <option value="Армянский">Армянский</option>
+            <option value="Африкаанс">Африкаанс</option>
+            <option value="Баскский">Баскский</option>
+            <option value="Белорусский">Белорусский</option>
+            <option value="Болгарский">Болгарский</option>
+            <option value="Вьетнамский">Вьетнамский</option>
+            <option value="Голландский">Голландский</option>
+            <option value=">Греческий">Греческий</option>
+            <option value="Иврит">Иврит</option>
+            <option value="Игбо">Игбо</option>
+            <option value="Индонезийский">Индонезийский</option>
+            <option value="Исландский">Исландский</option>
+            <option value="Испанский">Испанский</option>
+            <option value="Кантонский">Кантонский</option>
+            <option value="Корейский">Корейский</option>
+            <option value="Латинский">Латинский</option>
+            <option value="Латышский">Латышский</option>
+            <option value="Литовский">Литовский</option>
+            <option value="Монгольский">Монгольский</option>
+            <option value="Непальский">Непальский</option>
+            <option value="Норвежский">Норвежский</option>
+            <option value="Персидский(фарси)">Персидский(фарси)</option>
+            <option value="Польский">Польский</option>
+            <option value="Румынский">Румынский</option>
+            <option value="Датский">Датский</option>
+            <option value="Сербский">Сербский</option>
+            <option value="Словацкий">Словацкий</option>
+            <option value="Словенский">Словенский</option>
+            <option value="Татарский">Татарский</option>
+            <option value="Тайский">Тайский</option>
+            <option value="Турецкий">Турецкий</option>
+            <option value="Туркменский">Туркменский</option>
+            <option value="Украинский">Украинский</option>
+            <option value="Урду">Урду</option>
+            <option value="Финский">Финский</option>
+            <option value="Хинди">Хинди</option>
+            <option value="Хорватский">Хорватский</option>
+            <option value="Чешский">Чешский</option>
+            <option value="Шведский">Шведский</option>
+        </select>
+        <select name="exam" class="form-control" style="border: 1px solid #DBDBDB;">
+            <option value="IELTS" selected>IELTS</option>
+            <option value="TOEFL">TOEFL</option>
+            <option value="ЦТ">ЦТ</option>
+            <option value="ЕГЭ">ЕГЭ</option>
+        </select>
 
-
-        <button class="btn btn-lg btn-primary btn-block col-md-2" type="submit"><local:message code="btn.submit"/></button>
+        <select name="competence" class="form-control" style="border: 1px solid #DBDBDB;">
+            <option value="занятия с детьми" selected>занятия с детьми</option>
+            <option value="занятия с подростками">занятия с подростками</option>
+            <option value="бизнес-коммуникация">бизнес-коммуникация</option>
+            <option value="обучение новичков">обучение новичков</option>
+        </select>
+        <button class="btn btn-lg btn-primary btn-block" type="submit"><local:message code="btn.submit"/></button>
     </form>
 </div>
 

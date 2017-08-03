@@ -23,6 +23,7 @@ public class QTeacher extends EntityPathBase<Teacher> {
     public final StringPath city = createString("city");
 
     public final StringPath country = createString("country");
+    public final StringPath description = createString("description");
 
     public final DatePath<java.time.LocalDate> dateOfBirth = createDate("dateOfBirth", java.time.LocalDate.class);
 

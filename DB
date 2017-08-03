@@ -1,7 +1,15 @@
-INSERT INTO `roles` VALUES (1,'ROLE_ADMIN'),(2,'ROLE_USER'),(10,'ROLE_TEACHER');
+INSERT INTO `competence` VALUES (1,'занятия с детьми'),(2,'занятия с подростками'),(3,'бизнес-коммуникация'),(4,'обучение новичков');
 
-INSERT INTO `languages` VALUES (1,'russian'),(2,'english');
+INSERT INTO `exams` VALUES (1,'IELTS'),(2,'TOEFL'),(3,'ЦТ'),(4,'ЕГЭ');
 
-INSERT INTO `exams` VALUES (1,'toefyl');
+INSERT INTO `languages` VALUES (1,'Английский'),(2,'Русский');
 
-INSERT INTO `competence` VALUES (1,'children');
+INSERT INTO `roles` VALUES (1,'ROLE_ADMIN');
+INSERT INTO `teacher_competence` VALUES (1,1),(2,3);
+INSERT INTO `teacher_exams` VALUES (1,1),(2,3);
+INSERT INTO `teacher_interlanguages` VALUES (1,1),(2,2);
+INSERT INTO `teacher_mothertongues` VALUES (1,1),(2,2);
+INSERT INTO `teacher_teachinglanguages` VALUES (1,1),(2,2);
+INSERT INTO `teachers` VALUES (1,'New York','США',NULL,'I am cool Lady',NULL,'Cameron','+375333333444',12,15,'diaz','Diaz','teacher1.png'),(2,'Минск','Беларусь',NULL,'Я научу вас ИТ английскому за 2 дня',NULL,'Sergei','+375333848848',8,10,'oxota1401','Levkovskii','teacher111.png');
+INSERT INTO `users` VALUES (1,'oxothuk1401@gmail.com','$2a$11$y7V.y2WPHF4FJXw9KsOmnevMUM6ruLd6E4M1B7FgpQkIe3pXoyzHu','oxothuk1401');
+INSERT INTO `users_roles` VALUES (1,1);

@@ -2,11 +2,16 @@ body {
 	padding: 0;
 	margin: 0;
 	color: #000000;
-	background-color: #FFFFFF;
+	background-color: #ECEFF8;
 	font: 16px "Myriad" #000000;
 
 	-webkit-font-smoothing: antialiased;
 	-webkit-overflow-scrolling: touch;
+}
+
+.container {
+  background-color: #FFFFFF;
+  padding-bottom: 100px;
 }
 
 .centered {
@@ -47,8 +52,16 @@ header {
 	border: none;
 }
 
-.marginBottom {
+.marginBottom10px {
 	margin-bottom: 10px;
+}
+
+.marginBottom15px {
+  margin-bottom: 15px;
+}
+
+.marginTop25px {
+  margin-top: 25px;
 }
 
 .caret-right {
@@ -134,7 +147,163 @@ header {
   left: 263px;
 }
 
-#teachersPageContent {
+#teachersPageContent, #mainContent, #myTeachersContent {
   display: none;
 }
 
+/*style for calendar*/
+.myCalendarContentStyle {
+  background-color: #E5E5E5;
+  font-family: "Arial";
+  font-size: 16px;
+  color: #666666;
+}
+
+.paddingTop15px {
+  padding-top: 15px;
+}
+
+.paddingLeft0 {
+  padding-left: 0;
+}
+
+.padding0 {
+  padding: 0;
+}
+
+.fontSize24px {
+  font-size: 24px;
+}
+
+.paddingBottom18px {
+  padding-bottom: 18px;
+}
+
+.headerBoxesForCalendar {
+  width: 100px;
+  height: 34px;
+}
+
+.boxesForCalendar {
+  width: 80px;
+  height: 34px;
+}
+
+.smallDateColorForCalendar {
+  color: #B2B2B2;
+}
+
+.lineHeightForBoxes {
+  line-height: 34px;
+}
+
+.borderForBoxesCalendar {
+  border: 1px solid #FFFFFF;
+}
+
+.onhover:hover {
+  background-color: #FFF568;
+  cursor: pointer;
+}
+/*end of style for calendar*/
+/*----------------------------------------------------------------------------------------------------------------------------*/
+/*style for myTeachers*/
+ .myTeachersHeader {
+  padding-bottom: 25px;
+  padding-top: 15px;
+  border-bottom: 10px solid #ECEFF8;
+ }
+
+.myTeachersHeader>div>img {
+  width: 83px;
+  height: 83px;
+}
+
+.myTeacherHeaderText {
+  line-height: 83px;
+  margin-left: 10px;
+}
+
+  /*style for teachers*/
+.MTteachersWrap {
+  padding-bottom: 25px;
+  padding-top: 25px;
+  border-bottom: 10px solid #ECEFF8;
+  border-top: 10px solid #ECEFF8;
+}
+
+.MTteachersProfilePhoto {
+  width: 127px;
+  margin-bottom: 15px;
+}
+
+
+.MTteachersIconsWidth {
+  width: 39px;
+}
+
+.MTteachersLocalPlaceTime {
+  color: #7D7D7D;
+  margin-top: 4px;
+}
+
+.MTteachersFlagWidth {
+  width: 43px;
+}
+
+.MTteachersBlueColor {
+  color: #3790C7;
+}
+
+.MTteachersBlocksWidthHeightColor {
+  width: 145px;
+  height: 92px;
+  background-color: #D9DADB;
+}
+
+.MTteachersFontSize18px {
+  font-size: 18px;
+}
+
+.MTteachersPayedLessons {
+  color: #3E9DD7;
+  font-size: 30px;
+}
+
+.MTteachersIconsRadius {
+  border-radius: 20px;
+}
+
+  /*end of style for teachers*/
+
+/*end of style for myTeachers*/
+/*----------------------------------------------------------------------------*/
+
+/*style for reminders modal*/
+.remindersTextColorBlue {
+  color: #3E9DD7;
+}
+
+.borderNone {
+  border: none;
+}
+
+.modalContent {
+  width: 750px;
+  background-image: url("../images/others/hand.png");
+  background-repeat: no-repeat;
+  background-position: left 140px;
+}
+
+.wrapForPriceInReminders {
+  width: 290px;
+  margin: 0 auto;
+}
+
+.remindersBtnBuy {
+  font-size: 30px;
+  color: #FFFFFF;
+  background-color: #EA384E;
+  margin-top: 15px;
+}
+/*----------------------------------------------------------------------------*/

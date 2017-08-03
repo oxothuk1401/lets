@@ -10,9 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by ADMINUM on 16.07.2017.
- */
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -27,12 +24,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void registration(User user, String role) {
-        Role nRole = new Role();
-        nRole.setRole("ROLE_ADMIN");
-        roleService.addRole(nRole);
 
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.getRoles().add(roleService.findRoleByRole(nRole.getRole()));
+        user.getRoles().add(roleService.findRoleByRole(role));
         userDao.save(user);
 
     }

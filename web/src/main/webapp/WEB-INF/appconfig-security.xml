@@ -10,14 +10,17 @@
     <http auto-config="true">
         <intercept-url pattern="/" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
         <intercept-url pattern="/welcome" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
-        <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/register/teacher" access="hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/register/student" access="hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/find/teacher" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/admin" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/register/teacher" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/register/student" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/find/teacher" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/teachersCabinet" access="hasRole('ROLE_TEACHER')"/>
 
 
-        <form-login login-page="/login" default-target-url="/welcome" authentication-failure-url="/login?error"
-                    username-parameter="email" password-parameter="password"/>
+        <form-login login-page="/login"
+                    authentication-failure-url="/login?error"
+                    username-parameter="email"
+                    password-parameter="password"/>
 
         <logout logout-success-url="/login?logout"/>
     </http>

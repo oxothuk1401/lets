@@ -1,13 +1,16 @@
 "use strict"
 
 $(document).ready(function(){
-    $("#regTeacher").click(function(){
-        $("#teacherModal").modal();
+    $("#registration").click(function(){
+        $("#registrModal").modal();
     });
 
-    $("#regStudent").click(function(){
-        $("#studentModal").modal();
+    $("#autorization").click(function(){
+        $("#autorizationModal").modal();
     });
+
+
+
 });
 
 var password = document.getElementById("userPsw"), 

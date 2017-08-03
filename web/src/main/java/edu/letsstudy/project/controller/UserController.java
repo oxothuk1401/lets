@@ -1,5 +1,6 @@
 package edu.letsstudy.project.controller;
 
+import edu.letsstudy.project.pojo.Student;
 import edu.letsstudy.project.pojo.User;
 import edu.letsstudy.project.service.MailSenderService;
 import edu.letsstudy.project.service.SecurityService;
@@ -12,11 +13,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
+
 /**
  * Created by ADMINUM on 16.07.2017.
  */
 @Controller
-@SessionAttributes("userForm")
 public class UserController {
 
     @Autowired
@@ -31,27 +33,42 @@ public class UserController {
     @Autowired
     private MailSenderService mailSenderService;
 
-
-    @RequestMapping(value = "/registration", method = RequestMethod.GET)
-    public ModelAndView registration() {
-        return new ModelAndView("registration","userForm", new User() );
-    }
+//    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+//    public ModelAndView registration() {
+//        return new ModelAndView("registration", "userForm" , new User());
+//    }
+//
+//    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+//    public ModelAndView registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
+//        userValidator.validate(userForm, bindingResult);
+//
+//        if (bindingResult.hasErrors()) {
+//            return new ModelAndView("regstration");
+//        }
+//
+//        userService.registration(userForm, "ROLE_USER");
+//        securityService.autoLogin(userForm.getEmail(), userForm.getConfirmPassword());
+////        mailSenderService.sendMail("sergei.levkovskii@gmail.com", userForm.getEmail(), "ТЕСТОВАЯ ВЕРСИЯ ОТПРАВКИ СООБЩЕНИЙ", "ПРИВЕТ");
+//
+//        return new ModelAndView("welcome" , "userForm", userForm);
+//    }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public ModelAndView registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
-        userValidator.validate(userForm, bindingResult);
+    public ModelAndView registration(
+                                         @RequestParam("regUsername") String regUsername,
+                                     @RequestParam("regEmail") String regEmail,
+                                     @RequestParam("regPassword") String regPassword) {
 
-        if (bindingResult.hasErrors()) {
-            return new ModelAndView("regstration");
-        }
+            User user = new User();
+            user.setUsername(regUsername);
+            user.setEmail(regEmail);
+            user.setPassword(regPassword);
+            userService.registration(user, "ROLE_USER");
+//        mailSenderService.sendMail("sergei.levkovskii@gmail.com", userForm.getEmail(), "ТЕСТОВАЯ ВЕРСИЯ ОТПРАВКИ СООБЩЕНИЙ", "ПРИВЕТ");
 
-        userService.registration(userForm, "ROLE_ADMIN");
-        securityService.autoLogin(userForm.getEmail(), userForm.getConfirmPassword());
-        mailSenderService.sendMail("sergei.levkovskii@gmail.com", userForm.getEmail(), "ТЕСТОВАЯ ВЕРСИЯ ОТПРАВКИ СООБЩЕНИЙ", "ПРИВЕТ");
+            return new ModelAndView("welcome", "user", user);
 
-        return new ModelAndView("welcome" , "userForm", userForm);
     }
-
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
@@ -66,25 +83,15 @@ public class UserController {
         return "login";
     }
 
-    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
-    public String welcome(Model model) {
-        return "search";
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
+    public String welcome() {
+        return "welcome";
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public String admin(Model model) {
+    public String admin() {
         return "admin";
     }
 
 
-    @RequestMapping(value = "/loginValidator", method = RequestMethod.GET, produces = {"text/html; charset=UTF-8"})
-    public
-    @ResponseBody
-    String checkStrength(@RequestParam String login) {
-        if (login.length()<4) {
-            return "small";
-        } else {
-            return "big";
-        }
-    }
 }

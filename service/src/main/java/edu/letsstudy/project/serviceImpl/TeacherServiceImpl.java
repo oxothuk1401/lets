@@ -62,28 +62,31 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    public List<Teacher> teacherFilter(String country, String city, String teachingLanguage, String motherTongue, String interLanguage, String preparingExam, String competenceTitle) {
+    public List<Teacher> teacherFilter(String country, String teachingLanguage, String motherTongue, String priceForLesson, String preparingExam, String competenceTitle) {
         JPAQuery<Teacher> query = new JPAQuery<>(entityManager);
         QTeacher teacher = new QTeacher("teacher");
         QLanguage tLanguage = new QLanguage("tLanguage");
         QLanguage mLanguage = new QLanguage("mLanguage");
-        QLanguage inLanguage = new QLanguage("inLanguage");
         QExam exam = new QExam("exam");
         QCompetence competence = new QCompetence("competence");
         JPAQuery<Teacher> from = query.select(teacher).from(teacher);
-        // цена
-//        int primin = 1;
-//        int primax = 10;
-//        int priceForLesson = 4;
-//        if (priceForLesson > 0) {
-//            from.where(teacher.priceForLesson.between(primin,primax));
-//        }
+        int price1;
+        int price2;
+        if(priceForLesson.length() == 4){
+            price1 = Integer.parseInt(priceForLesson.substring(0,1));
+            price2 = Integer.parseInt(priceForLesson.substring(2,4));
+
+        }else {
+            price1 = Integer.parseInt(priceForLesson.substring(0,2));
+            price2 = Integer.parseInt(priceForLesson.substring(3,5));
+
+        }
+        if (priceForLesson.length() > 0) {
+            from.where(teacher.priceForLesson.between(price1,price2));
+        }
 
         if (country.length() > 0) {
             from.where(teacher.country.contains(country));
-        }
-        if (city.length() > 0) {
-            from.where(teacher.city.contains(city));
         }
         if (teachingLanguage.length() > 0) {
             from.join(teacher.teachingLanguages, tLanguage).where(tLanguage.language.contains(teachingLanguage));
@@ -91,16 +94,12 @@ public class TeacherServiceImpl implements TeacherService{
         if (motherTongue.length() > 0) {
             from.join(teacher.motherTongues, mLanguage).where(mLanguage.language.contains(motherTongue));
         }
-        if (interLanguage.length() > 0) {
-            from.join(teacher.interlanguages, inLanguage).where(inLanguage.language.contains(interLanguage));
-        }
         if (preparingExam.length() > 0) {
             from.join(teacher.preparingExams, exam).where(exam.exam.contains(preparingExam));
         }
         if (competenceTitle.length() > 0) {
             from.join(teacher.specialCompetence, competence).where(competence.competenceTitle.contains(competenceTitle));
         }
-//        return query.fetch();
         return query.fetchResults().getResults();
     }
 

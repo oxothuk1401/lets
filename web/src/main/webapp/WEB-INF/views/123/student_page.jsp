@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LETSSTUDY кабинет учителя</title>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.0.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.offcanvas.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.2.0.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.offcanvas.min.js"></script>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -23,18 +23,18 @@
             crossorigin="anonymous"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.offcanvas.min.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/teachersCabinet.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/search.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.offcanvas.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/teachersCabinet.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/search.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/content.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/time.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/time.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/menu.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/search.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/search.js"></script>
 
 
 </head>
 <body>
-<%@ include file="include/header_student.jsp" %>
+<%@ include file="../include/header_student.jsp" %>
 
 <div class="container">
     <section>
@@ -46,7 +46,7 @@
                             <input type="text" class="input-medium search-query searchPanel"
                                    placeholder="поиск преподователя" style="width: 85%;">
                             <button type="submit" class="btn buttonForSearchPanel"><img
-                                    src="/resources/images/icons/search2.png"></button>
+                                    src="/images/icons/search2.png"></button>
                         </div>
                     </div>
                 </form>
@@ -63,8 +63,8 @@
         </div>
     </section>
     <div class="row">
-        <%@ include file="include/search_menu.jsp" %>
-        <%@ include file="include/search_result.jsp" %>
+        <%@ include file="../include/search_menu.jsp" %>
+        <%@ include file="../include/search_result.jsp" %>
     </div>
 </div>
 

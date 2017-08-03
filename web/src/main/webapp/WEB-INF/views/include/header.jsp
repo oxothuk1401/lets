@@ -1,10 +1,8 @@
-<%@ taglib uri="http://www.springframework.org/tags" prefix="local" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <nav class="navbar navbar-default navbar-fixed-top navbarStyle" role="navigation">
     <div class="container-fluid padding15px">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/login"><img src="/resources/images/logo/logo.png" alt="logo"
-                                                       id="logo"></a>
+            <a class="navbar-brand" href="/login"><img src="/resources/images/logo/logo.png" alt="logo" id="logo"></a>
             <div class="navbar-header navbar-brand currentTime">
                 <u class="colorGreen"><span id="currentTime" class="colorGreen"></span></u>
             </div>
